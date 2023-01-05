@@ -1,20 +1,18 @@
 package com.suuber.persistence.models;
 
 import java.util.Collection;
+import java.util.UUID;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 
-@Entity
+@Entity(name = "Privilege")
+@Table(name = "privileges")
 public class Privilege {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
+    private UUID id;
+    @Column(name = "name")
     private String name;
 
     @ManyToMany(mappedBy = "privileges")
@@ -31,11 +29,11 @@ public class Privilege {
 
     //
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(final Long id) {
+    public void setId(final UUID id) {
         this.id = id;
     }
 

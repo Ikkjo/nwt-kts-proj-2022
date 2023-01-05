@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.suuber.persistence.models</OriginalElement>
+  <nodes>
+    <node x="870.5" y="1302.75">com.suuber.persistence.models.Admin</node>
+    <node x="-11.0" y="619.75">com.suuber.persistence.models.Ride</node>
+    <node x="816.0" y="1368.25">com.suuber.persistence.models.Client</node>
+    <node x="415.5" y="787.7500000000001">com.suuber.persistence.models.Driver</node>
+    <node x="1967.0" y="1126.1756756756758">com.suuber.persistence.models.ChatMessage</node>
+    <node x="796.5" y="781.7533783783786">com.suuber.persistence.models.Complaint</node>
+    <node x="1171.5" y="928.4256756756758">com.suuber.persistence.models.User</node>
+    <node x="832.5" y="28.5">com.suuber.persistence.models.Address</node>
+    <node x="775.0" y="443.25337837837844">com.suuber.persistence.models.Vehicle</node>
+    <node x="1539.0" y="915.6756756756758">com.suuber.persistence.models.Role</node>
+    <node x="414.5" y="1272.7533783783786">com.suuber.persistence.models.Review</node>
+    <node x="1165.0" y="350.75337837837844">com.suuber.persistence.models.VehicleDescription</node>
+    <node x="62.5" y="-23.0">com.suuber.persistence.models.RideStart</node>
+    <node x="1971.0" y="934.1756756756758">com.suuber.persistence.models.Privilege</node>
+    <node x="26.5" y="464.75000000000006">com.suuber.persistence.models.enumerations.PaymentStatus</node>
+    <node x="366.0" y="47.0">com.suuber.persistence.models.RideStop</node>
+    <node x="411.5" y="521.7500000000001">com.suuber.persistence.models.enumerations.RideStatus</node>
+    <node x="837.0" y="1010.7533783783786">com.suuber.persistence.models.enumerations.DriverStatus</node>
+    <node x="1590.0" y="332.25337837837844">com.suuber.persistence.models.enumerations.VehicleType</node>
+    <node x="-329.0" y="533.0">com.suuber.persistence.models.Payment</node>
+    <node x="67.5" y="234.0">com.suuber.persistence.models.RideEnd</node>
+    <node x="60.0" y="42.0">com.suuber.persistence.models.enumerations.Currency</node>
+    <node x="1511.0" y="1213.5">com.suuber.persistence.models.Chat</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.suuber.persistence.models.Client" target="com.suuber.persistence.models.User" relationship="GENERALIZATION">
+      <point x="128.0" y="-0.0" />
+      <point x="1134.0" y="1435.75" />
+      <point x="1134.0" y="1375.0" />
+      <point x="1144.0" y="1375.0" />
+      <point x="1144.0" y="1223.9256756756758" />
+      <point x="-140.5" y="98.5" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Chat" target="com.suuber.persistence.models.User" relationship="TO_MANY">
+      <point x="-202.0" y="-0.0" />
+      <point x="1485.0" y="1318.0" />
+      <point x="1485.0" y="1125.4256756756758" />
+      <point x="140.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.User" target="com.suuber.persistence.models.Chat" relationship="TO_MANY">
+      <point x="140.5" y="-0.0" />
+      <point x="1485.0" y="1125.4256756756758" />
+      <point x="1485.0" y="1318.0" />
+      <point x="-202.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Ride" target="com.suuber.persistence.models.RideStop" relationship="TO_MANY">
+      <point x="161.5" y="-0.0" />
+      <point x="344.0" y="816.75" />
+      <point x="344.0" y="176.0" />
+      <point x="-177.5" y="43.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Driver" target="com.suuber.persistence.models.enumerations.DriverStatus" relationship="TO_ONE">
+      <point x="128.0" y="-43.0" />
+      <point x="743.0" y="830.7500000000001" />
+      <point x="743.0" y="816.2500000000001" />
+      <point x="753.0" y="816.2500000000001" />
+      <point x="753.0" y="1115.2533783783786" />
+      <point x="-107.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Ride" target="com.suuber.persistence.models.Review" relationship="TO_MANY">
+      <point x="161.5" y="-0.0" />
+      <point x="344.0" y="816.75" />
+      <point x="344.0" y="1395.7533783783786" />
+      <point x="-129.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Review" target="com.suuber.persistence.models.Ride" relationship="TO_ONE">
+      <point x="-129.0" y="-0.0" />
+      <point x="344.0" y="1395.7533783783786" />
+      <point x="344.0" y="816.75" />
+      <point x="161.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Ride" target="com.suuber.persistence.models.Driver" relationship="TO_ONE">
+      <point x="161.5" y="-0.0" />
+      <point x="344.0" y="816.75" />
+      <point x="344.0" y="873.7500000000001" />
+      <point x="-128.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Role" target="com.suuber.persistence.models.Privilege" relationship="TO_MANY">
+      <point x="174.0" y="-0.0" />
+      <point x="-136.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Privilege" target="com.suuber.persistence.models.Role" relationship="TO_MANY">
+      <point x="-136.5" y="-0.0" />
+      <point x="174.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.RideStart" target="com.suuber.persistence.models.RideStop" relationship="GENERALIZATION">
+      <point x="88.0" y="-0.0" />
+      <point x="334.0" y="-0.5" />
+      <point x="334.0" y="128.0" />
+      <point x="344.0" y="128.0" />
+      <point x="344.0" y="90.0" />
+      <point x="-177.5" y="-43.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Admin" target="com.suuber.persistence.models.User" relationship="GENERALIZATION">
+      <point x="73.5" y="-0.0" />
+      <point x="1134.0" y="1325.25" />
+      <point x="1134.0" y="1375.0" />
+      <point x="1144.0" y="1375.0" />
+      <point x="1144.0" y="1223.9256756756758" />
+      <point x="-140.5" y="98.5" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Chat" target="com.suuber.persistence.models.ChatMessage" relationship="TO_MANY">
+      <point x="202.0" y="-0.0" />
+      <point x="1941.0" y="1318.0" />
+      <point x="1941.0" y="1230.6756756756758" />
+      <point x="-140.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Payment" target="com.suuber.persistence.models.Ride" relationship="TO_ONE">
+      <point x="133.0" y="-0.0" />
+      <point x="-37.0" y="674.5" />
+      <point x="-37.0" y="816.75" />
+      <point x="-161.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Ride" target="com.suuber.persistence.models.Client" relationship="TO_MANY">
+      <point x="161.5" y="-0.0" />
+      <point x="344.0" y="816.75" />
+      <point x="344.0" y="1262.2533783783786" />
+      <point x="743.0" y="1262.2533783783786" />
+      <point x="743.0" y="1435.75" />
+      <point x="-128.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.ChatMessage" target="com.suuber.persistence.models.User" relationship="TO_ONE">
+      <point x="-140.5" y="-0.0" />
+      <point x="1941.0" y="1230.6756756756758" />
+      <point x="1941.0" y="1203.0" />
+      <point x="1485.0" y="1203.0" />
+      <point x="1485.0" y="1125.4256756756758" />
+      <point x="140.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Vehicle" target="com.suuber.persistence.models.VehicleDescription" relationship="TO_ONE">
+      <point x="169.0" y="-0.0" />
+      <point x="-147.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.VehicleDescription" target="com.suuber.persistence.models.Vehicle" relationship="TO_ONE">
+      <point x="-147.0" y="-0.0" />
+      <point x="169.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Payment" target="com.suuber.persistence.models.Client" relationship="TO_ONE">
+      <point x="133.0" y="-0.0" />
+      <point x="-37.0" y="674.5" />
+      <point x="-37.0" y="1566.2533783783786" />
+      <point x="743.0" y="1566.2533783783786" />
+      <point x="743.0" y="1435.75" />
+      <point x="-128.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Payment" target="com.suuber.persistence.models.enumerations.PaymentStatus" relationship="TO_ONE">
+      <point x="133.0" y="-0.0" />
+      <point x="-37.0" y="674.5" />
+      <point x="-37.0" y="532.25" />
+      <point x="-124.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Payment" target="com.suuber.persistence.models.enumerations.Currency" relationship="TO_ONE">
+      <point x="133.0" y="-0.0" />
+      <point x="-37.0" y="674.5" />
+      <point x="-37.0" y="128.0" />
+      <point x="-90.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Ride" target="com.suuber.persistence.models.enumerations.RideStatus" relationship="TO_ONE">
+      <point x="161.5" y="-0.0" />
+      <point x="344.0" y="816.75" />
+      <point x="344.0" y="644.7500000000001" />
+      <point x="-132.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.RideEnd" target="com.suuber.persistence.models.RideStop" relationship="GENERALIZATION">
+      <point x="83.0" y="-0.0" />
+      <point x="334.0" y="256.5" />
+      <point x="334.0" y="128.0" />
+      <point x="344.0" y="128.0" />
+      <point x="344.0" y="90.0" />
+      <point x="-177.5" y="-43.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.User" target="com.suuber.persistence.models.Role" relationship="TO_MANY">
+      <point x="140.5" y="-0.0" />
+      <point x="1485.0" y="1125.4256756756758" />
+      <point x="1485.0" y="1020.1756756756758" />
+      <point x="-174.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Role" target="com.suuber.persistence.models.User" relationship="TO_MANY">
+      <point x="-174.0" y="-0.0" />
+      <point x="1485.0" y="1020.1756756756758" />
+      <point x="1485.0" y="1125.4256756756758" />
+      <point x="140.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.RideStop" target="com.suuber.persistence.models.Address" relationship="TO_ONE">
+      <point x="177.5" y="-0.0" />
+      <point x="-111.5" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Driver" target="com.suuber.persistence.models.User" relationship="GENERALIZATION">
+      <point x="128.0" y="43.0" />
+      <point x="743.0" y="916.7500000000001" />
+      <point x="743.0" y="1230.2533783783786" />
+      <point x="1134.0" y="1230.2533783783786" />
+      <point x="1134.0" y="1375.0" />
+      <point x="1144.0" y="1375.0" />
+      <point x="1144.0" y="1223.9256756756758" />
+      <point x="-140.5" y="98.5" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Review" target="com.suuber.persistence.models.Client" relationship="TO_ONE">
+      <point x="129.0" y="-0.0" />
+      <point x="743.0" y="1395.7533783783786" />
+      <point x="743.0" y="1435.75" />
+      <point x="-128.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Vehicle" target="com.suuber.persistence.models.Driver" relationship="TO_ONE">
+      <point x="-169.0" y="-0.0" />
+      <point x="753.0" y="547.7533783783784" />
+      <point x="753.0" y="816.2500000000001" />
+      <point x="743.0" y="816.2500000000001" />
+      <point x="743.0" y="830.7500000000001" />
+      <point x="128.0" y="-43.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Driver" target="com.suuber.persistence.models.Vehicle" relationship="TO_ONE">
+      <point x="128.0" y="-43.0" />
+      <point x="743.0" y="830.7500000000001" />
+      <point x="743.0" y="816.2500000000001" />
+      <point x="753.0" y="816.2500000000001" />
+      <point x="753.0" y="547.7533783783784" />
+      <point x="-169.0" y="-0.0" />
+    </edge>
+    <edge source="com.suuber.persistence.models.Complaint" target="com.suuber.persistence.models.User" relationship="TO_ONE">
+      <point x="147.5" y="-0.0" />
+      <point x="1134.0" y="886.2533783783786" />
+      <point x="1134.0" y="1026.9256756756758" />
+      <point x="-140.5" y="-98.5" />
+    </edge>
+    <edge source="com.suuber.persistence.models.VehicleDescription" target="com.suuber.persistence.models.enumerations.VehicleType" relationship="TO_ONE">
+      <point x="147.0" y="-0.0" />
+      <point x="-123.0" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.4925465838509317" showDependencies="true" x="959.5000000000001" y="772.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

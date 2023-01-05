@@ -1,40 +1,45 @@
 package com.suuber.persistence.models;
 
 import java.util.Collection;
-
-import javax.persistence.*;
+import java.util.UUID;
 
 import lombok.Getter;
 import org.jboss.aerogear.security.otp.api.Base32;
+import javax.persistence.*;
+import javax.persistence.Table;
 
-@Entity
-@Table(name = "user_account")
+@Entity(name = "User")
+@Table(name = "user_accounts")
+@Inheritance(strategy = InheritanceType.JOINED)
 @Getter
-public class User {
+public abstract class User {
 
     @Id
     @Column(unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    protected UUID id;
 
-    private String firstName;
-
-    private String lastName;
-
-    private String email;
-
-    @Column(length = 128)
-    private String password;
-
-    private boolean enabled;
-
-    private String secret;
-
-    //
-
+    @Column( name = "first_name")
+    protected String firstName;
+    @Column( name = "last_name")
+    protected String lastName;
+    @Column( name = "email")
+    protected String email;
+    @Column( name = "password")
+    protected String password;
+    @Column( name = "enabled")
+    protected boolean enabled;
+    @Column( name = "secret")
+    protected String secret;
+    @Column( name = "roles")
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-    private Collection<Role> roles;
+    @JoinTable(name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    protected Collection<Role> roles;
+    @Column( name = "chats")
+    @ManyToMany
+    protected Collection<Chat> chats;
 
     public User() {
         super();
@@ -42,7 +47,7 @@ public class User {
         this.enabled = false;
     }
 
-    public void setId(final Long id) {
+    public void setId(final UUID id) {
         this.id = id;
     }
 
