@@ -36,7 +36,7 @@ public abstract class User {
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-    protected Collection<Role> roles;
+    protected Collection<UserRole> roles;
     @Column( name = "chats")
     @ManyToMany
     protected Collection<Chat> chats;
@@ -67,7 +67,7 @@ public abstract class User {
         this.password = password;
     }
 
-    public void setRoles(final Collection<Role> roles) {
+    public void setRoles(final Collection<UserRole> roles) {
         this.roles = roles;
     }
 

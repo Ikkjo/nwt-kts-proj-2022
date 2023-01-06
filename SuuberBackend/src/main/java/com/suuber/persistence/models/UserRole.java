@@ -12,7 +12,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Role {
+public class UserRole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,11 +27,11 @@ public class Role {
 
     private String name;
 
-    public Role() {
+    public UserRole() {
         super();
     }
 
-    public Role(final String name) {
+    public UserRole(final String name) {
         super();
         this.name = name;
     }
@@ -89,7 +89,7 @@ public class Role {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Role role = (Role) obj;
+        final UserRole role = (UserRole) obj;
         if (!getName().equals(role.getName())) {
             return false;
         }
@@ -98,6 +98,6 @@ public class Role {
 
     @Override
     public String toString() {
-        return "Role [name=" + name + "]" + "[id=" + id + "]";
+        return "UserRole [name=" + name + "]" + "[id=" + id + "]";
     }
 }

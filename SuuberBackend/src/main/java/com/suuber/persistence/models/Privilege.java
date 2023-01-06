@@ -16,7 +16,7 @@ public class Privilege {
     private String name;
 
     @ManyToMany(mappedBy = "privileges")
-    private Collection<Role> roles;
+    private Collection<UserRole> roles;
 
     public Privilege() {
         super();
@@ -45,11 +45,11 @@ public class Privilege {
         this.name = name;
     }
 
-    public Collection<Role> getRoles() {
+    public Collection<UserRole> getRoles() {
         return roles;
     }
 
-    public void setRoles(final Collection<Role> roles) {
+    public void setRoles(final Collection<UserRole> roles) {
         this.roles = roles;
     }
 
